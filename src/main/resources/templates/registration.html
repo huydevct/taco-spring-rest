@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-fluid my-4">
+        <div class="row">
+
+            <div class="col-4">
+                <h1>Register</h1>
+                <img class="img-fluid" th:src="@{/images/TacoCloud.png}"/>
+            </div>
+
+            <div class="col-8">
+                <form method="POST" th:action="@{/register}" th:object="${registrationForm}" id="registerForm">
+                    <div class="form-group row">
+                        <label for="username" class="col-2 col-form-label">Username: </label>
+                        <div class="col-6" >
+                            <input type="text" class="form-control" th:field="*{username}" placeholder="Username"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+                                Name Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password" class="col-2 col-form-label">Password: </label>
+                        <div class="col-6">
+                            <input type="password" class="form-control" th:field="*{password}" placeholder="Password"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+                                Password Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="confirmPassword" class="col-2 col-form-label">Confirm password: </label>
+                        <div class="col-6">
+                            <input type="password" class="form-control" th:field="*{confirmPassword}" placeholder="Confirm password"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}">
+                                Password Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fullname" class="col-2 col-form-label">Full name: </label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" th:field="*{fullname}" placeholder="Full name"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}">
+                                fullname Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="street" class="col-2 col-form-label">Street: </label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" th:field="*{street}" placeholder="Street"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('street')}" th:errors="*{street}">
+                                fullname Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="city" class="col-2 col-form-label">City: </label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" th:field="*{city}" placeholder="City"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">
+                                city Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="province" class="col-2 col-form-label">Province: </label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" th:field="*{province}" placeholder="Province"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('province')}" th:errors="*{province}">
+                                city Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="zip" class="col-2 col-form-label">Zip: </label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" th:field="*{zip}" placeholder="Zip"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}">
+                                zip Error
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="phoneNumber" class="col-2 col-form-label">Phone number: </label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" th:field="*{phoneNumber}" placeholder="Phone number"/>
+                            <div class="text-danger" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">
+                                phoneNumber Error
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary offset-2" value="Register"/>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
